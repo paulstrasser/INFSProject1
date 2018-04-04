@@ -72,7 +72,7 @@ public class SignInController implements Initializable {
         
         if (auth.sanitise(username.getText(), password.getText())){
             //InjectionError.setVisible(false);
-                if (auth.authenticate(username.getText(), password.getText(), true)){
+                if (auth.authenticate(username.getText(), password.getText())){
                     loggedInUser = username.getText();
                     //userType = Integer.parseInt(d.returnSingleQuery("SELECT USERTYPE FROM USER WHERE USERNAME LIKE '" + loggedInUser + "'"));
                     loadNext("Seek a Ride.fxml"); //Change this to the main report page

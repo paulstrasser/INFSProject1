@@ -59,7 +59,7 @@ public class SeekARideController implements Initializable {
     private Button Signout, Search, Post;
     
     @FXML
-    private Text errorText, notifyText, name;
+    private Text errorText, notifyText;//, name;
     
     @FXML
     private TextField startNum, startStreet, startSub, startPC, endNum, endStreet, endSub, endPC, pickupTime, maxPrice; 
@@ -72,9 +72,6 @@ public class SeekARideController implements Initializable {
     
     @FXML
     private ComboBox numPass;
-    
-    @FXML
-    private MenuItem AdjustmentRequests;
     
     @FXML
     private TableView<Offer> Table;
@@ -196,7 +193,7 @@ public class SeekARideController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        name.setText(d.returnSingleQuery("SELECT FNAME AS ANSWER FROM USER WHERE USERNAME = '" + SignInController.getUser() + "'"));
+        //name.setText(d.returnSingleQuery("SELECT FNAME AS ANSWER FROM USER WHERE USERNAME = '" + SignInController.getUser() + "'"));
         
         System.out.println(SignInController.getUser());
         int type = Integer.parseInt(d.returnSingleQuery("SELECT USERTYPE AS ANSWER FROM USER WHERE USERNAME LIKE '" + SignInController.getUser() + "'"));

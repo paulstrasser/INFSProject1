@@ -85,14 +85,14 @@ public class DBController {
     }
     
     //Authenticate
-    public boolean authenticate(String username, String password, Boolean staff){
+    public boolean authenticate(String username, String password){//, Boolean staff){
         java.sql.Statement statement = null;
-        if (staff == true){
-            currentQuery = "SELECT STAFFID FROM STAFF WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'";
-        }
-        else{
-            currentQuery = "SELECT USERID FROM USER WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'";
-        }
+        //if (staff == true){
+            //currentQuery = "SELECT STAFFID FROM STAFF WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'";
+        //}
+        //else{
+        currentQuery = "SELECT USERID FROM USER WHERE USERNAME = '" + username + "' AND PASSWORD = '" + password + "'";
+        //}
         openConnection();
         try {
             statement = conn.createStatement();
